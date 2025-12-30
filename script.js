@@ -1,225 +1,134 @@
-// script.js - Main JavaScript file for navigation and basic functionality
-
-// DOM Elements
-const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-const navLinks = document.querySelectorAll(".nav-link, .mobile-nav-link");
-const terminalCursors = document.querySelectorAll(".terminal-cursor");
-const backToTop = document.querySelector(".back-to-top");
-const socialLinks = document.querySelectorAll(".social-link");
-const viewMoreProjectsBtn = document.querySelector(".view-more-projects");
-
-// Mobile Menu Toggle
-if (mobileMenuToggle) {
-  mobileMenuToggle.addEventListener("click", () => {
-    const isExpanded =
-      mobileMenuToggle.getAttribute("aria-expanded") === "true";
-    mobileMenuToggle.setAttribute("aria-expanded", !isExpanded);
-    mobileMenu.classList.toggle("hidden");
-
-    // Toggle hamburger to X animation
-    const svg = mobileMenuToggle.querySelector("svg");
-    if (!isExpanded) {
-      svg.innerHTML = `
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          `;
-    } else {
-      svg.innerHTML = `
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          `;
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            // Toggle menu visibility
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('block');
+            
+            // Update aria-expanded attribute
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            
+            // Animate the hamburger icon
+            const svg = mobileMenuButton.querySelector('svg');
+            if (!isExpanded) {
+                // Transform to X
+                svg.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                `;
+            } else {
+                // Transform back to hamburger
+                svg.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                `;
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('block');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                
+                // Reset hamburger icon
+                const svg = mobileMenuButton.querySelector('svg');
+                svg.innerHTML = `
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                `;
+            });
+        });
     }
-  });
-}
-
-// Close mobile menu when clicking on a link
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth < 640) {
-      // sm breakpoint
-      mobileMenu.classList.add("hidden");
-      mobileMenuToggle.setAttribute("aria-expanded", "false");
-      const svg = mobileMenuToggle.querySelector("svg");
-      svg.innerHTML = `
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            `;
-    }
-  });
-});
-
-// Smooth scrolling for navigation links
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href");
-
-    // Handle home link (target is '#')
-    if (targetId === "#") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-      updateActiveNavLink("home");
-      return;
-    }
-
-    const targetElement = document.querySelector(targetId);
-
-    if (targetElement) {
-      const headerOffset = 60;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
-      // Update active state
-      const section =
-        link.getAttribute("data-section") || targetId.substring(1); // Remove # from id
-      updateActiveNavLink(section);
-    }
-  });
-});
-
-// Active navigation link based on scroll position
-function updateActiveNavLink(section) {
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    const linkSection = link.getAttribute("data-section");
-
-    if (linkSection === section) {
-      link.classList.add("active");
-    }
-  });
-}
-
-// Scroll spy to update active nav link
-window.addEventListener("scroll", () => {
-  const sections = [
-    { id: "home", element: document.getElementById("hero") },
-    { id: "projects", element: document.getElementById("projects") },
-    { id: "about", element: document.getElementById("about") },
-    { id: "socials", element: document.getElementById("socials") },
-  ];
-
-  let currentSection = "home";
-  const scrollPosition = window.scrollY + 100; // Add offset for better detection
-
-  sections.forEach((section) => {
-    if (section.element) {
-      const sectionTop = section.element.offsetTop;
-      const sectionHeight = section.element.clientHeight;
-
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        currentSection = section.id;
-      }
-    }
-  });
-
-  updateActiveNavLink(currentSection);
-});
-
-// Terminal Cursor Blinking
-function blinkCursors() {
-  terminalCursors.forEach((cursor) => {
-    cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
-  });
-}
-
-// Start cursor blinking
-if (terminalCursors.length > 0) {
-  setInterval(blinkCursors, 500);
-}
-
-// Back to Top functionality
-if (backToTop) {
-  backToTop.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    
+    // Terminal cursor blinking effect
+    const terminalCursors = document.querySelectorAll('.terminal-cursor');
+    
+    terminalCursors.forEach(cursor => {
+        let isVisible = true;
+        
+        // Start the blinking animation
+        setInterval(() => {
+            if (cursor) {
+                cursor.style.opacity = isVisible ? '0' : '1';
+                isVisible = !isVisible;
+            }
+        }, 500); // Blink every 500ms
     });
-    updateActiveNavLink("home");
-  });
-
-  // Show/hide back to top button based on scroll position
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-      backToTop.style.opacity = "1";
-      backToTop.style.pointerEvents = "auto";
-    } else {
-      backToTop.style.opacity = "0";
-      backToTop.style.pointerEvents = "none";
-    }
-  });
-
-  // Initialize back to top button visibility
-  backToTop.style.opacity = "0";
-  backToTop.style.pointerEvents = "none";
-  backToTop.style.transition = "opacity 0.3s ease";
-}
-
-// Social Links - Add analytics or tracking
-socialLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    const platform = link.getAttribute("data-platform");
-    console.log(`Clicked on ${platform} link`);
-    // You can add analytics tracking here
-  });
-});
-
-// View More Projects button - prevent default and show message
-if (viewMoreProjectsBtn) {
-  viewMoreProjectsBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    alert(
-      "More projects coming soon! This would navigate to a projects page in a real implementation."
-    );
-  });
-}
-
-// Add active state styles to CSS via JavaScript
-const style = document.createElement("style");
-style.textContent = `
-    .nav-link.active,
-    .mobile-nav-link.active {
-        color: #545643;
-        font-weight: 600;
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Only process internal links
+            if (this.getAttribute('href') === '#') return;
+            
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Adjust for fixed header
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Nav link active state on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinksArray = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    
+    function updateActiveNavLink() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.scrollY >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinksArray.forEach(link => {
+            // Reset all links
+            link.classList.remove('text-[#545643]', 'border-[#545643]');
+            link.classList.add('text-[#80727B]');
+            
+            // Add active class to current section link
+            const linkSection = link.getAttribute('data-section');
+            if (linkSection === current) {
+                link.classList.remove('text-[#80727B]');
+                link.classList.add('text-[#545643]');
+                
+                // Add border for mobile nav links
+                if (link.classList.contains('mobile-nav-link')) {
+                    link.classList.add('border-[#545643]');
+                }
+            }
+        });
     }
     
-    .mobile-nav-link.active {
-        background-color: #BBACC1;
-        border-left-color: #545643;
-    }
+    window.addEventListener('scroll', updateActiveNavLink);
+    updateActiveNavLink(); // Initial call on page load
     
-    .terminal-cursor {
-        transition: opacity 0.1s;
-    }
-`;
-document.head.appendChild(style);
-
-// Initialize active nav link on page load
-document.addEventListener("DOMContentLoaded", () => {
-  updateActiveNavLink("home");
-
-  // Close mobile menu on window resize to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 640) {
-      if (mobileMenu) mobileMenu.classList.add("hidden");
-      if (mobileMenuToggle) {
-        mobileMenuToggle.setAttribute("aria-expanded", "false");
-        const svg = mobileMenuToggle.querySelector("svg");
-        if (svg) {
-          svg.innerHTML = `
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    `;
-        }
-      }
-    }
-  });
+    // Back to top functionality
+    const backToTopLinks = document.querySelectorAll('.back-to-top');
+    
+    backToTopLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
 });

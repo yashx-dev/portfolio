@@ -15,3 +15,157 @@ body {
 #logo {
   font-family: Inter;
 }
+/* Project stage effects */
+Aspect ratio classes */
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+/* Image Gallery Modal */
+.image-gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-gallery-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.image-gallery-modal.active .image-gallery-content {
+    transform: scale(1);
+}
+
+.enlarged-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-gallery {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+}
+
+.close-gallery:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Loading animation for images */
+.image-loading {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* 3D Z-axis Project Cards */
+@media (min-width: 768px) {
+  .project-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+  }
+  
+  /* Project 1 (Center - Highest) */
+  .project-card:nth-child(1) {
+    transform: translateZ(30px) scale(1.02);
+    box-shadow: 
+      0 25px 50px -12px rgba(84, 86, 67, 0.25),
+      0 8px 16px -8px rgba(84, 86, 67, 0.15),
+      0 0 0 1px rgba(84, 86, 67, 0.1);
+  }
+  
+  /* Project 2 (Left - Middle) */
+  .project-card:nth-child(2) {
+    transform: translateZ(15px) scale(1.01);
+    box-shadow: 
+      0 20px 40px -10px rgba(84, 86, 67, 0.2),
+      0 6px 12px -6px rgba(84, 86, 67, 0.1),
+      0 0 0 1px rgba(84, 86, 67, 0.08);
+  }
+  
+  /* Project 3 (Right - Lowest) */
+  .project-card:nth-child(3) {
+    transform: translateZ(0px);
+    box-shadow: 
+      0 15px 30px -8px rgba(84, 86, 67, 0.15),
+      0 4px 8px -4px rgba(84, 86, 67, 0.1),
+      0 0 0 1px rgba(84, 86, 67, 0.06);
+  }
+  
+  /* Hover effects with Z-axis */
+  .project-card:hover {
+    transform: translateZ(40px) scale(1.05) !important;
+    box-shadow: 
+      0 35px 60px -15px rgba(84, 86, 67, 0.35),
+      0 15px 25px -10px rgba(84, 86, 67, 0.2),
+      0 0 0 1px rgba(84, 86, 67, 0.15);
+    z-index: 50 !important;
+  }
+  
+  /* Adjust hover for specific cards */
+  .project-card:nth-child(1) {
+    transform: translateZ(0px) !important;
+  }
+  
+  .project-card:nth-child(2) {
+    transform: translateZ(50px) !important;
+  }
+  
+  .project-card:nth-child(3) {
+    transform: translateZ(-30px) !important;
+  }
+}
+
+/* Make sure the grid container has perspective */
+#projects .grid {
+  perspective: 1000px;
+}
+    

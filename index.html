@@ -10,16 +10,15 @@
   </head>
   <body class="bg-[#F1DEDE]">
     <nav
-      class="bg-[#F1DEDE] shadow-sm sticky top-0 z-50 border-b border-[#80727B]/40 "
+      class="bg-[#F1DEDE] shadow-sm sticky top-0 z-50 border-b border-[#80727B]/40"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20">
           <div class="flex items-center">
-            <span id="logo"
+            <span
+              id="logo"
               class="text-3xl font-semibold text-[#545643] tracking-tight"
-            ><a href="#">
-              Layer-C
-            </a>
+              ><a href="#"> Layer-C </a>
             </span>
           </div>
 
@@ -119,7 +118,10 @@
     </nav>
     <main>
       <!-- Hero Section -->
-      <section id="hero" class="bg-[#F1DEDE] min-h-[calc(100vh-80px)] flex items-center">
+      <section
+        id="hero"
+        class="bg-[#F1DEDE] min-h-[calc(100vh-80px)] flex items-center"
+      >
         <div
           class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-3xl lg:w-full"
         >
@@ -264,7 +266,7 @@
           </div>
         </div>
       </section>
-<!-- Projects Section -->
+      <!-- Projects Section -->
 <section id="projects" class="bg-[#F1DEDE] py-12 md:py-20 lg:py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
@@ -276,122 +278,169 @@
         </h2>
       </div>
       <p class="text-[#80727B] text-sm md:text-base lg:text-lg xl:text-xl max-w-3xl">
-        A selection of recent work showcasing digital products and experiences.
+        A selection of my best work. These are my top 3 projects out of <span class="font-semibold text-[#545643]">10+</span> completed projects.
       </p>
     </div>
 
-    <!-- Desktop: Grid with Side Fade Effects -->
-    <div class="relative">
-      <!-- Gradient Overlay Left -->
-      <div class="hidden md:block absolute left-0 top-0 bottom-0 w-16 lg:w-24 xl:w-32 bg-gradient-to-r from-[#F1DEDE] to-transparent pointer-events-none z-10"></div>
+    <!-- Projects Grid with Z-axis Depth -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 md:items-end relative">
       
-      <!-- Gradient Overlay Right -->
-      <div class="hidden md:block absolute right-0 top-0 bottom-0 w-16 lg:w-24 xl:w-32 bg-gradient-to-l from-[#F1DEDE] to-transparent pointer-events-none z-10"></div>
-      
-      <!-- Projects Grid - 3 cards with responsive layout -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        
-        <!-- Project 1 -->
-        <div class="project-card project-modal-trigger bg-[#BBACC1] rounded-xl overflow-hidden border border-[#80727B]/40 hover:border-[#80727B] transition-colors hover:transform hover:-translate-y-1 duration-300" data-project="cash-app">
-          <div class="h-48 md:h-56 lg:h-64 relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-              <div class="text-center p-4 md:p-6">
-                <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-800 mb-1 md:mb-2">Cash App</div>
-                <p class="text-blue-700 text-sm md:text-base">Design Systems</p>
-              </div>
+      <!-- Project 2: Swaply (Left side - Middle Z) -->
+      <div class="project-card bg-[#BBACC1] rounded-xl overflow-hidden border border-[#80727B]/40 hover:border-[#80727B] transition-all hover:transform hover:-translate-y-1 duration-300 group order-2 md:order-1 relative z-20">
+        <div class="relative overflow-hidden cursor-pointer image-gallery-trigger">
+          <!-- Image Container -->
+          <div class="aspect-video relative">
+            <img 
+              src="images/swaplyhero-page.png" 
+              alt="Swaply Book Store - E-commerce platform for books" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              data-full-image="images/swaplyhero-page.png"
+              data-description="Swaply - Online book store with Flask backend"
+            >
+            <!-- Project Badge -->
+            <div class="absolute top-3 left-3 bg-[#80727B] text-[#F1DEDE] px-3 py-1 rounded-full text-xs font-medium">
+              #2
             </div>
-          </div>
-          <div class="p-4 md:p-5 lg:p-6">
-            <div class="flex items-start space-x-3 mb-2 md:mb-3">
-              <div class="w-2 h-2 mt-1.5 md:mt-2 bg-[#545643] rounded-full flex-shrink-0"></div>
-              <div>
-                <h3 class="text-base md:text-lg lg:text-xl font-semibold text-[#545643] mb-1 md:mb-2">Cash App Design Systems</h3>
-                <p class="text-[#80727B] text-xs md:text-sm">
-                  Mobile web design system and evolved on mobile design systems (including every component).
-                </p>
-              </div>
-            </div>
-            <div class="mt-4">
-              <a href="#" class="view-project-btn text-[#545643] hover:text-[#80727B] text-xs md:text-sm font-medium inline-flex items-center" data-project="cash-app">
-                View Details
-                <svg class="ml-1 w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 p-2 rounded-full">
+                <svg class="w-5 h-5 text-[#545643]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-              </a>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Project 2 -->
-        <div class="project-card project-modal-trigger bg-[#BBACC1] rounded-xl overflow-hidden border border-[#80727B]/40 hover:border-[#80727B] transition-colors hover:transform hover:-translate-y-1 duration-300" data-project="line-influencer">
-          <div class="h-48 md:h-56 lg:h-64 relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
-              <div class="text-center p-4 md:p-6">
-                <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-800 mb-1 md:mb-2">Line</div>
-                <p class="text-green-700 text-sm md:text-base">Influencer Platform</p>
-              </div>
+        <div class="p-4 md:p-5 lg:p-6">
+          <div class="flex items-start space-x-3 mb-2 md:mb-3">
+            <div class="w-2 h-2 mt-1.5 md:mt-2 bg-[#545643] rounded-full flex-shrink-0"></div>
+            <div>
+              <h3 class="text-base md:text-lg lg:text-xl font-semibold text-[#545643] mb-1 md:mb-2">
+                Swaply
+              </h3>
+              <p class="text-[#80727B] text-xs md:text-sm">
+                A Book selling Online store with multiple pages and Flask work and theme Changer
+              </p>
             </div>
           </div>
-          <div class="p-4 md:p-5 lg:p-6">
-            <div class="flex items-start space-x-3 mb-2 md:mb-3">
-              <div class="w-2 h-2 mt-1.5 md:mt-2 bg-[#545643] rounded-full flex-shrink-0"></div>
-              <div>
-                <h3 class="text-base md:text-lg lg:text-xl font-semibold text-[#545643] mb-1 md:mb-2">Line Influencer Platform</h3>
-                <p class="text-[#80727B] text-xs md:text-sm">
-                  Led the end-to-end development of app, shipping its concept and guiding it through the entire release process.
-                </p>
-              </div>
-            </div>
-            <div class="mt-4">
-              <a href="#" class="view-project-btn text-[#545643] hover:text-[#80727B] text-xs md:text-sm font-medium inline-flex items-center" data-project="line-influencer">
-                View Details
-                <svg class="ml-1 w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">Flask</span>
+            <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded">E-commerce</span>
+            <span class="px-2 py-1 bg-pink-100 text-pink-700 text-xs rounded">Theme Changer</span>
           </div>
         </div>
-
-        <!-- Project 3 -->
-        <div class="project-card project-modal-trigger bg-[#BBACC1] rounded-xl overflow-hidden border border-[#80727B]/40 hover:border-[#80727B] transition-colors hover:transform hover:-translate-y-1 duration-300" data-project="line-design">
-          <div class="h-48 md:h-56 lg:h-64 relative">
-            <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
-              <div class="text-center p-4 md:p-6">
-                <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-purple-800 mb-1 md:mb-2">Line</div>
-                <p class="text-purple-700 text-sm md:text-base">Global Design Systems</p>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 md:p-5 lg:p-6">
-            <div class="flex items-start space-x-3 mb-2 md:mb-3">
-              <div class="w-2 h-2 mt-1.5 md:mt-2 bg-[#545643] rounded-full flex-shrink-0"></div>
-              <div>
-                <h3 class="text-base md:text-lg lg:text-xl font-semibold text-[#545643] mb-1 md:mb-2">Line Global Design Systems</h3>
-                <p class="text-[#80727B] text-xs md:text-sm">
-                  Started and led the creation of Line's global design system, creating the foundation from scratch.
-                </p>
-              </div>
-            </div>
-            <div class="mt-4">
-              <a href="#" class="view-project-btn text-[#545643] hover:text-[#80727B] text-xs md:text-sm font-medium inline-flex items-center" data-project="line-design">
-                View Details
-                <svg class="ml-1 w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Project 1: Le Jardin (Center - Highest Z) -->
+      <div class="project-card bg-[#BBACC1] rounded-xl overflow-hidden border border-[#80727B]/40 hover:border-[#80727B] transition-all hover:transform hover:-translate-y-1 duration-300 group order-1 md:order-2 relative z-30 shadow-2xl">
+        <div class="relative overflow-hidden cursor-pointer image-gallery-trigger">
+          <!-- Image Container -->
+          <div class="aspect-video relative">
+            <img 
+              src="images/hero-page.png" 
+              alt="Le Jardin Restaurant Website - Modern restaurant landing page" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              data-full-image="images/hero-page.png"
+              data-description="Le Jardin Restaurant - Modern landing page"
+            >
+            <!-- Project Badge -->
+            <div class="absolute top-3 left-3 bg-[#545643] text-[#F1DEDE] px-3 py-1 rounded-full text-xs font-medium">
+              #1
+            </div>
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 p-2 rounded-full">
+                <svg class="w-5 h-5 text-[#545643]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:p-5 lg:p-6">
+          <div class="flex items-start space-x-3 mb-2 md:mb-3">
+            <div class="w-2 h-2 mt-1.5 md:mt-2 bg-[#545643] rounded-full flex-shrink-0"></div>
+            <div>
+              <h3 class="text-base md:text-lg lg:text-xl font-semibold text-[#545643] mb-1 md:mb-2">
+                Le Jardin - Restaurant
+              </h3>
+              <p class="text-[#80727B] text-xs md:text-sm">
+                A Great MVP Landing page for a Restaurant with Responsiveness
+              </p>
+            </div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">Landing Page</span>
+            <span class="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs rounded">Restaurant</span>
+            <span class="px-2 py-1 bg-red-100 text-red-700 text-xs rounded">MVP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Personal Blog (Right side - Lowest Z) -->
+      <div class="project-card bg-[#BBACC1] rounded-xl overflow-hidden border border-[#80727B]/40 hover:border-[#80727B] transition-all hover:transform hover:-translate-y-1 duration-300 group order-3 md:order-3 relative z-10">
+        <div class="relative overflow-hidden cursor-pointer image-gallery-trigger">
+          <!-- Image Container -->
+          <div class="aspect-video relative">
+            <img 
+              src="images/dotcodrheropage.png" 
+              alt="Personal Blog Website - First complete website with Tailwind CSS" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              data-full-image="images/dotcodrheropage.png"
+              data-description="Personal Blog Page - Built with Tailwind CSS"
+            >
+            <!-- Project Badge -->
+            <div class="absolute top-3 left-3 bg-[#909580] text-[#F1DEDE] px-3 py-1 rounded-full text-xs font-medium">
+              #3
+            </div>
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 p-2 rounded-full">
+                <svg class="w-5 h-5 text-[#545643]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:p-5 lg:p-6">
+          <div class="flex items-start space-x-3 mb-2 md:mb-3">
+            <div class="w-2 h-2 mt-1.5 md:mt-2 bg-[#545643] rounded-full flex-shrink-0"></div>
+            <div>
+              <h3 class="text-base md:text-lg lg:text-xl font-semibold text-[#545643] mb-1 md:mb-2">
+                Personal Blog Page
+              </h3>
+              <p class="text-[#80727B] text-xs md:text-sm">
+                First Website with Tailwind and Complete Responsiveness
+              </p>
+            </div>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">Tailwind CSS</span>
+            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded">Responsive</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded">Blog</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- View More Projects Button -->
-    <div class="text-center mt-8 md:mt-12">
-      <a href="#" class="inline-flex items-center text-[#545643] font-medium text-sm md:text-base px-6 py-3 md:px-8 md:py-4 border border-[#545643] hover:bg-[#545643] hover:text-[#F1DEDE] transition-all duration-200 rounded-lg group">
-        View More Projects
-        <svg class="ml-2 md:ml-3 w-4 h-4 md:w-5 md:h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Small Instagram Link -->
+    <div class="text-center mt-16 md:mt-24 pt-8 border-t border-[#80727B]/20">
+      <p class="text-[#80727B] text-sm md:text-base mb-3">
+        Want to see all <span class="font-semibold text-[#545643]">10+ projects</span> including Notion templates & digital products?
+      </p>
+      <a 
+        href="https://www.instagram.com/layer.b1/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center text-pink-600 hover:text-purple-700 font-medium text-sm md:text-base group"
+      >
+        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+        </svg>
+        Follow <span class="font-semibold">@layer.b1</span> for all my work
+        <svg class="ml-1 w-3 h-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </a>
@@ -474,7 +523,9 @@
                   <div
                     class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-3 md:p-5 lg:p-6"
                   >
-                    <div class="font-mono text-white text-[0.75rem] md:text-[0.9rem]">
+                    <div
+                      class="font-mono text-white text-[0.75rem] md:text-[0.9rem]"
+                    >
                       <div class="flex">
                         <span class="text-[#909580] mr-2">$</span>
                         <span class="text-[#909580]">whoami --details</span>
@@ -516,104 +567,157 @@
                   Building digital experiences that matter
                 </h3>
 
-               <div class="space-y-4 md:space-y-5 lg:space-y-6">
-  <p
-    class="text-[#80727B] text-base md:text-lg leading-relaxed"
-  >
-    I'm Yash Khandelwal and I'm a passionate developer with work that reflects both aesthetic appeal and functional excellence. My journey began with curiosity and has evolved into a dedicated practice of creating meaningful digital experiences under my main brand, <strong>Layer</strong>.
-  </p>
+                <div class="space-y-4 md:space-y-5 lg:space-y-6">
+                  <p
+                    class="text-[#80727B] text-base md:text-lg leading-relaxed"
+                  >
+                    I'm Yash Khandelwal and I'm a passionate developer with work
+                    that reflects both aesthetic appeal and functional
+                    excellence. My journey began with curiosity and has evolved
+                    into a dedicated practice of creating meaningful digital
+                    experiences under my main brand, <strong>Layer</strong>.
+                  </p>
 
-  <p
-    class="text-[#80727B] text-base md:text-lg leading-relaxed"
-  >
-    Through <strong>Layer-C</strong>, I share my personal brand and content creation journey, while <strong>Layer-2</strong> focuses on digital products designed to deliver both functional precision and engaging design. My approach blends technical precision with creative problem-solving, ensuring every project not only works flawlessly but also delights and engages its users. Now, I am starting this journey from scratch with Layer to build and expand these experiences professionally.
-  </p>
+                  <p
+                    class="text-[#80727B] text-base md:text-lg leading-relaxed"
+                  >
+                    Through <strong>Layer-C</strong>, I share my personal brand
+                    and content creation journey, while
+                    <strong>Layer-2</strong> focuses on digital products
+                    designed to deliver both functional precision and engaging
+                    design. My approach blends technical precision with creative
+                    problem-solving, ensuring every project not only works
+                    flawlessly but also delights and engages its users. Now, I
+                    am starting this journey from scratch with Layer to build
+                    and expand these experiences professionally.
+                  </p>
 
-  <!-- Skills Terminal -->
-  <div
-    class="mt-6 md:mt-8 p-4 md:p-5 lg:p-6 bg-[#BBACC1] rounded-xl border border-[#80727B]/40"
-  >
-    <div class="flex items-center space-x-2 mb-4">
-      <div class="w-2 h-2 bg-[#545643] rounded-full"></div>
-      <h4
-        class="text-lg md:text-xl font-semibold text-[#545643]"
-      >
-        Core Expertise
-      </h4>
-    </div>
+                  <!-- Skills Terminal -->
+                  <div
+                    class="mt-6 md:mt-8 p-4 md:p-5 lg:p-6 bg-[#BBACC1] rounded-xl border border-[#80727B]/40"
+                  >
+                    <div class="flex items-center space-x-2 mb-4">
+                      <div class="w-2 h-2 bg-[#545643] rounded-full"></div>
+                      <h4
+                        class="text-lg md:text-xl font-semibold text-[#545643]"
+                      >
+                        Core Expertise
+                      </h4>
+                    </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-      <div class="flex items-center space-x-2">
-        <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-        <span class="text-sm md:text-base text-[#80727B]">Frontend Development</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-        <span class="text-sm md:text-base text-[#80727B]">UI/UX Design</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
-        <span class="text-sm md:text-base text-[#80727B]">Responsive Design</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <div class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
-        <span class="text-sm md:text-base text-[#80727B]">Performance</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <div class="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
-        <span class="text-sm md:text-base text-[#80727B]">Accessibility</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <div class="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>
-        <span class="text-sm md:text-base text-[#80727B]">Clean Code</span>
-      </div>
-    </div>
-  </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      <div class="flex items-center space-x-2">
+                        <div
+                          class="w-1.5 h-1.5 bg-green-500 rounded-full"
+                        ></div>
+                        <span class="text-sm md:text-base text-[#80727B]"
+                          >Frontend Development</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                        <span class="text-sm md:text-base text-[#80727B]"
+                          >UI/UX Design</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div
+                          class="w-1.5 h-1.5 bg-purple-500 rounded-full"
+                        ></div>
+                        <span class="text-sm md:text-base text-[#80727B]"
+                          >Responsive Design</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div
+                          class="w-1.5 h-1.5 bg-yellow-500 rounded-full"
+                        ></div>
+                        <span class="text-sm md:text-base text-[#80727B]"
+                          >Performance</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
+                        <span class="text-sm md:text-base text-[#80727B]"
+                          >Accessibility</span
+                        >
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-1.5 h-1.5 bg-cyan-500 rounded-full"></div>
+                        <span class="text-sm md:text-base text-[#80727B]"
+                          >Clean Code</span
+                        >
+                      </div>
+                    </div>
+                  </div>
 
-  <!-- Stats -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-6 md:mt-8">
-    <div class="text-center p-3 md:p-4 bg-[#545643] text-[#F1DEDE] rounded-lg">
-      <div class="text-xl md:text-2xl lg:text-3xl font-bold">1+</div>
-      <div class="text-xs md:text-sm opacity-90">Year Experience</div>
-    </div>
-    <div class="text-center p-3 md:p-4 bg-[#80727B] text-[#F1DEDE] rounded-lg">
-      <div class="text-xl md:text-2xl lg:text-3xl font-bold">10+</div>
-      <div class="text-xs md:text-sm opacity-90">Projects</div>
-    </div>
-    <div class="text-center p-3 md:p-4 bg-[#909580] text-[#F1DEDE] rounded-lg">
-      <div class="text-xl md:text-2xl lg:text-3xl font-bold">1</div>
-      <div class="text-xs md:text-sm opacity-90">Videos Created</div>
-    </div>
-    <div class="text-center p-3 md:p-4 bg-[#BBACC1] text-[#545643] rounded-lg">
-      <div class="text-xl md:text-2xl lg:text-3xl font-bold">100%</div>
-      <div class="text-xs md:text-sm opacity-90">Learning Mode</div>
-    </div>
-  </div>
+                  <!-- Stats -->
+                  <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-6 md:mt-8"
+                  >
+                    <div
+                      class="text-center p-3 md:p-4 bg-[#545643] text-[#F1DEDE] rounded-lg"
+                    >
+                      <div class="text-xl md:text-2xl lg:text-3xl font-bold">
+                        1+
+                      </div>
+                      <div class="text-xs md:text-sm opacity-90">
+                        Year Experience
+                      </div>
+                    </div>
+                    <div
+                      class="text-center p-3 md:p-4 bg-[#80727B] text-[#F1DEDE] rounded-lg"
+                    >
+                      <div class="text-xl md:text-2xl lg:text-3xl font-bold">
+                        10+
+                      </div>
+                      <div class="text-xs md:text-sm opacity-90">Projects</div>
+                    </div>
+                    <div
+                      class="text-center p-3 md:p-4 bg-[#909580] text-[#F1DEDE] rounded-lg"
+                    >
+                      <div class="text-xl md:text-2xl lg:text-3xl font-bold">
+                        1
+                      </div>
+                      <div class="text-xs md:text-sm opacity-90">
+                        Videos Created
+                      </div>
+                    </div>
+                    <div
+                      class="text-center p-3 md:p-4 bg-[#BBACC1] text-[#545643] rounded-lg"
+                    >
+                      <div class="text-xl md:text-2xl lg:text-3xl font-bold">
+                        100%
+                      </div>
+                      <div class="text-xs md:text-sm opacity-90">
+                        Learning Mode
+                      </div>
+                    </div>
+                  </div>
 
-  <!-- CTA Button -->
-  <div class="pt-4 md:pt-5 lg:pt-6">
-    <a
-      href="#socials"
-      class="inline-flex items-center text-[#F1DEDE] bg-[#909580] hover:bg-[#545643] px-5 py-3 md:px-6 md:py-3.5 lg:px-8 lg:py-4 text-sm md:text-base lg:text-lg rounded-md font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-    >
-      Let's Work Together
-      <svg
-        class="ml-2 md:ml-3 w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M14 5l7 7m0 0l-7 7m7-7H3"
-        />
-      </svg>
-    </a>
-  </div>
-</div>
-
+                  <!-- CTA Button -->
+                  <div class="pt-4 md:pt-5 lg:pt-6">
+                    <a
+                      href="#socials"
+                      class="inline-flex items-center text-[#F1DEDE] bg-[#909580] hover:bg-[#545643] px-5 py-3 md:px-6 md:py-3.5 lg:px-8 lg:py-4 text-sm md:text-base lg:text-lg rounded-md font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+                    >
+                      Let's Work Together
+                      <svg
+                        class="ml-2 md:ml-3 w-3.5 h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -714,7 +818,8 @@
                       >
                       <span class="text-gray-400 mr-2">➜</span>
                       <a
-                        href="https://github.com/YashKh-09" target="_blank"
+                        href="https://github.com/YashKh-09"
+                        target="_blank"
                         class="social-link text-gray-300 hover:text-white transition-colors truncate hover:underline"
                         data-platform="github"
                       >
@@ -733,7 +838,8 @@
                       >
                       <span class="text-gray-400 mr-2">➜</span>
                       <a
-                        href="http://www.youtube.com/@Layer-C" target="_blank"
+                        href="http://www.youtube.com/@Layer-C"
+                        target="_blank"
                         class="social-link text-red-400 hover:text-red-300 transition-colors truncate hover:underline"
                         data-platform="youtube"
                       >
@@ -752,7 +858,8 @@
                       >
                       <span class="text-gray-400 mr-2">➜</span>
                       <a
-                        href="https://www.instagram.com/layer.c1/" target="_blank"
+                        href="https://www.instagram.com/layer.c1/"
+                        target="_blank"
                         class="social-link text-pink-400 hover:text-pink-300 transition-colors truncate hover:underline"
                         data-platform="instagram-content"
                       >
@@ -771,7 +878,8 @@
                       >
                       <span class="text-gray-400 mr-2">➜</span>
                       <a
-                        href="https://www.instagram.com/layer.b1/" target="_blank"
+                        href="https://www.instagram.com/layer.b1/"
+                        target="_blank"
                         class="social-link text-purple-400 hover:text-purple-300 transition-colors truncate hover:underline"
                         data-platform="instagram-templates"
                       >
@@ -809,7 +917,8 @@
                       >
                       <span class="text-gray-400 mr-2">➜</span>
                       <a
-                        href="https://payhip.com/LayerB" target="_blank"
+                        href="https://payhip.com/LayerB"
+                        target="_blank"
                         class="social-link text-teal-400 hover:text-teal-300 transition-colors truncate hover:underline"
                         data-platform="payhip"
                       >
@@ -828,7 +937,8 @@
                       >
                       <span class="text-gray-400 mr-2">➜</span>
                       <a
-                        href="https://www.fiverr.com/rishigoyal_" target="_blank"
+                        href="https://www.fiverr.com/rishigoyal_"
+                        target="_blank"
                         class="social-link text-green-400 hover:text-green-300 transition-colors truncate hover:underline"
                         data-platform="fiverr"
                       >
@@ -902,11 +1012,21 @@
       <!-- Project Modal (Hidden by default) -->
       <div id="project-modal" class="modal fixed inset-0 z-[100] hidden">
         <div class="modal-overlay absolute inset-0 bg-black/50"></div>
-        <div class="modal-container relative min-h-screen flex items-center justify-center p-4">
-          <div class="modal-content bg-[#F1DEDE] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto">
-            <div class="modal-header flex justify-between items-center p-6 border-b border-[#80727B]/40">
-              <h3 class="modal-title text-2xl font-semibold text-[#545643]">Project Details</h3>
-              <button class="modal-close text-[#80727B] hover:text-[#545643] text-2xl p-2">
+        <div
+          class="modal-container relative min-h-screen flex items-center justify-center p-4"
+        >
+          <div
+            class="modal-content bg-[#F1DEDE] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto"
+          >
+            <div
+              class="modal-header flex justify-between items-center p-6 border-b border-[#80727B]/40"
+            >
+              <h3 class="modal-title text-2xl font-semibold text-[#545643]">
+                Project Details
+              </h3>
+              <button
+                class="modal-close text-[#80727B] hover:text-[#545643] text-2xl p-2"
+              >
                 &times;
               </button>
             </div>
@@ -988,9 +1108,10 @@
         </div>
       </div>
     </footer>
-    
+
     <!-- JavaScript Files -->
     <script src="script.js"></script>
-    <script src="modal.js"></script>
+    <script src="gallery.js"></script>
+    <!-- <script src="modals.js"></script> -->
   </body>
 </html>
