@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,22 +13,6 @@ const Footer = () => {
           <div className="text-xs text-[#a0a0a0] italic order-1 sm:order-2">
             Built with precision
           </div>
-        </div>
-
-        {/* Mobile Social Links */}
-        <div className="flex justify-center gap-4 mt-4 sm:hidden">
-          <a href="#" className="text-[#a0a0a0] hover:text-[#b8a58b] text-xs transition-colors">
-            GH
-          </a>
-          <a href="#" className="text-[#a0a0a0] hover:text-[#b8a58b] text-xs transition-colors">
-            LI
-          </a>
-          <a href="#" className="text-[#a0a0a0] hover:text-[#b8a58b] text-xs transition-colors">
-            TW
-          </a>
-          <a href="#" className="text-[#a0a0a0] hover:text-[#b8a58b] text-xs transition-colors">
-            EM
-          </a>
         </div>
       </div>
     </footer>

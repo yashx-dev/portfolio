@@ -100,7 +100,7 @@ const Projects = () => {
         {/* Instagram Link */}
         <div className="mt-16 text-center">
           <a
-            href="https://www.instagram.com/yashkh.layer"
+            href="https://www.instagram.com/_yashxdev"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 text-sm text-[#a0a0a0] hover:text-[#b8a58b] transition-colors group"

@@ -96,14 +96,14 @@ const Contact = () => {
   const socialLinks = [
     {
       platform: "GitHub",
-      url: "https://github.com/YashKh-09",
-      handle: "github.com/YashKh-09",
+      url: "https://github.com/yashx-dev",
+      handle: "github.com/yashx-dev",
       icon: <FaGithub />,
     },
     {
       platform: "Instagram",
-      url: "https://www.instagram.com/yashkh.layer",
-      handle: "@yashkh.layer",
+      url: "https://www.instagram.com/_yashxdev",
+      handle: "@yashx.dev",
       icon: <FaInstagram />,
     },
     {
