@@ -103,7 +103,7 @@ const Contact = () => {
     {
       platform: "Instagram",
       url: "https://www.instagram.com/_yashxdev",
-      handle: "@yashx.dev",
+      handle: "@_yashxdev",
       icon: <FaInstagram />,
     },
     {
